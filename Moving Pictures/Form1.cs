@@ -38,5 +38,29 @@ namespace Moving_Pictures
             pictureBox1.Location = new Point(pictureBox1.Location.X + 50, pictureBox1.Location.Y-50);
             await Task.Delay(500);
         }
+
+        private void left_Click(object sender, EventArgs e)
+            // move left
+        {
+            if (pictureBox1.Location.X - 50 > 0)
+            {
+                pictureBox1.Location = new Point(pictureBox1.Location.X - 50, pictureBox1.Location.Y);
+            }
+            else
+            {
+                pictureBox1.Location = new Point(0, pictureBox1.Location.Y);
+            }
+            
+        }
+
+        private async void fullleft_Click(object sender, EventArgs e)
+            // move to left of screen
+        {
+            while (pictureBox1.Location.X - 1 > 0)
+            {
+                pictureBox1.Location = new Point(pictureBox1.Location.X - 5, pictureBox1.Location.Y);
+                await Task.Delay(10);
+            }
+        }
     }
 }
